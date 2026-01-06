@@ -1,0 +1,26 @@
+{
+  "name": "backend_project",
+  "version": "1.0.0",
+  "description": "a basic app to deploy",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/utils/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ajajm/roadmap.git"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "MD Ajaj",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ajajm/roadmap/issues"
+  },
+  "homepage": "https://github.com/ajajm/roadmap#readme",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1"
+  }
+}
