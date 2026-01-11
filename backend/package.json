@@ -5,11 +5,12 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node src/utils/server.js"
+    "start": "node src/index.js",
+    "dev": "nodemon -r dotenv/config src/index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ajajm/roadmap.git"
+    "url": "git+https://github.com/ajajm/backend_project.git"
   },
   "keywords": [
     "node"
@@ -22,6 +23,10 @@
   "homepage": "https://github.com/ajajm/roadmap#readme",
   "dependencies": {
     "dotenv": "^17.2.3",
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "mongoose": "^9.1.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
   }
 }
