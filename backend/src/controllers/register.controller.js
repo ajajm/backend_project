@@ -48,6 +48,8 @@ const registerUser = asyncHandler( async (req, res) => {
 
    if (!avatar) {
       throw new apiError(400, "Avatar file not uploaded")
+      console.log("Please reupload the file.");
+      
    }
 
    //create user object - create entry in db
