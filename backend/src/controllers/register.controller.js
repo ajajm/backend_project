@@ -1,5 +1,6 @@
 import { asyncHandler } from "../util/asyncHandler.js"
 import { apiError } from "../util/apiError.js";
+import { apiResponse } from "../util/apiResponse.js";
 import { User } from "../models/user.models.js"
 import { uploadOnCloudinary } from "../util/cloudinary.js";
 
@@ -48,8 +49,7 @@ const registerUser = asyncHandler( async (req, res) => {
 
    if (!avatar) {
       throw new apiError(400, "Avatar file not uploaded")
-      console.log("Please reupload the file.");
-      
+      console.log("Please reupload the file."); //debug
    }
 
    //create user object - create entry in db
@@ -65,10 +65,14 @@ const registerUser = asyncHandler( async (req, res) => {
    const createdUser = await User.findById(user._id).select(
       "-password -refreshToken"     //this fields are not selected
    )
-
+   
    if (!createdUser) {
       throw new apiError(500, "Something went wrong while registering user")
    }
+
+   return res.status(201).json(
+      new apiResponse(200, createdUser, "User created successfully!")
+   )
 })
 
 export  { registerUser }
