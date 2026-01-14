@@ -1,10 +1,10 @@
 import { asyncHandler } from '../util/asyncHandler.js';
 
-const registerUser = asyncHandler( async (req, res) => {
+const loginUser = asyncHandler( async (req, res) => {
     res.status(200).json({
         message: "Backend project !! success"
     })
 })
 
 
-export { registerUser } 
+export { loginUser } 

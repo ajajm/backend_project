@@ -18,10 +18,11 @@ app.use(cookieParser());
 
 // Roures import
 import userRouter from "./routes/user.routes.js";
-import router from "./routes/user.routes.js";
+import userRegister from "./routes/register.routes.js"
 
 // Router declaration
 app.use("/api/v1/user", userRouter)    //https://xyz/api/v1/user/
+app.use("/api/v1/user", userRegister)
 
 
 
