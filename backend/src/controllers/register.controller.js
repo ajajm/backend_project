@@ -36,7 +36,7 @@ const registerUser = asyncHandler( async (req, res) => {
    }
 
    //check if files are uploaded : image, avatar
-   const avatarLocalPath = req.files?.avatar[0]?.path;
+   const avatarLocalPath = req.files?.avatar[0]?.path; 
    const coverImageLocalPath = req.files?.coverImage[0]?.path;
    
    if(!avatarLocalPath) {
