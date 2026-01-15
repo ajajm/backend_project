@@ -1,10 +1,28 @@
 import { Router } from "express";
-import { loginUser } from "../controllers/user.controller.js";
+import { loginUser, logoutUser } from "../controllers/user.controller.js";
 import { upload } from "../middlewares/multer.middlewares.js";
+import { verifyJWT } from "../middlewares/auth.middleware.js";
 
 const router = Router();
+router.route("/register").post(
+    upload.fields([     //injecting middleware, for file uploading
+        {
+            name: "avatar",
+            maxCount: 1
+        },
+        {
+            name: "coverImage",
+            maxCount: 1
+        }
+    ]),
+    registerUser
+) // Regisetr
 
-// After /user these routes will active
 router.route("/login").post(loginUser); // user logiin
+
+
+// secured rouets
+router.route("/logout").post(verifyJWT ,logoutUser)
+
 
 export default router;
